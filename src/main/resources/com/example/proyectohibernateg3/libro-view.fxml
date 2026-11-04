@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectohibernateg3.LibroController">
+    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+    <Label style="-fx-font-size: 22px;" text="Catálogo de libros" />
+    <Label text="Título" />
+    <TextField fx:id="titulo" promptText="Título del libro" />
+    <Label text="Autor" />
+    <TextField fx:id="autor" promptText="Nombre del autor" />
+    <HBox spacing="12">
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Año de publicación" />
+            <TextField fx:id="anioPublicacion" promptText="Ej. 2024" />
+        </VBox>
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Precio" />
+            <TextField fx:id="precio" promptText="Ej. 250.50" />
+        </VBox>
+    </HBox>
+    <HBox fx:id="acciones" spacing="10">
+        <Button onAction="#guardar" text="Guardar" />
+        <Button onAction="#cargar" text="Consultar libros" />
+    </HBox>
+    <Label fx:id="estado" wrapText="true" />
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idCol" prefWidth="70" text="ID" />
+            <TableColumn fx:id="tituloCol" prefWidth="210" text="Título" />
+            <TableColumn fx:id="autorCol" prefWidth="180" text="Autor" />
+            <TableColumn fx:id="anioCol" prefWidth="80" text="Año" />
+            <TableColumn fx:id="precioCol" prefWidth="100" text="Precio" />
+        </columns>
+        <placeholder><Label text="No hay libros para mostrar." /></placeholder>
+    </TableView>
+</VBox>
